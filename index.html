@@ -1,79 +1,94 @@
-<!doctype html>
-<html>
-  <head>
-    <!-- Page setup -->
-    <meta charset="utf-8">
-    <title>Hello</title>
-    <meta name="description" content="A brief description of your site for search engines">
-    <meta name="author" content="Information about the author here">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="icon" type="image/png" href="favicon.png">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/689d7f38de.js" crossorigin="anonymous"></script>
+	<title>dakshjain</title>
+	<link rel="icon" href="./1.png" type="image/x-icon">
+</head>
+<body>
+<div id="header">
+	<div class="container">
+		<nav>
+			<a href="#header"><span class="logo">DJ</span></a>
+			<ul>
+				<li><a href="#header">Home</a></li><li><a href="#about">About</a></li><li><a href="cv.pdf" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="header-text">
+			<h1>Hello, I'm<br><span>Daksh </span>Jain.</h1>
+		</div>
+	</div>
+</div>
+<div id="block">
+	<p class="text">Take your time, look around, and learn all there is to know about me.
+		 I'm actively looking for research projects and internships.
+		 If you're looking to work with me or want to grab some coffee, drop me a line and I'll get back to you soon.</p>
+</div>
+<!-------------about---------->
+<div id="about">
+		<div class="row">
+			<div class="col1">
+				<img src="side.jpeg" style="width: 500px; height: 700px;">
+			</div>
+			<div class="col2">
+				<h1 class="sub-title">About me</h1>
+				<p class="heading">Who I am</p>
+				<p class="info">I am an undergraduate student at IIT Gandhinagar. I am actively pursuing internships to fuse theory with practice. I am passionate about delving into diverse domains. From crafting apps and websites to diving into the realm of machine learning, coding is my compass as I explore various landscapes of technology.</p>
+				<p class="heading">What I like</p>
+				<p class="info">I find joy in organising cultural festivals, testing my luck/skills in the stock market and crypto arena, and embracing my inner gamer with my friends. I love music, food and comedy.</p>
+		</div>
+	</div>
+</div>
+<!-------------Contact---------->
+<div id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="left">
+				<h1 class="subtitle">Contact me</h1>
+				<p><i class="fa-solid fa-envelope" style="vertical-align: middle;"></i>DAKSHJAIN17[AT]GMAIL[DOT]COM</p>
+				<div class="social">
+					<a href="https://www.linkedin.com/in/dkshjn/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>					
+					<a href="https://twitter.com/dj17_joy" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+					<a href="https://www.instagram.com/dkshjn/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+				</div>
+				<a href="cv.pdf" class="btn" target="_blank">Download CV</a>
+			</div>
+			<div class="right">
+				<form name="submit-to-google-sheet">
+					<input type="text" name="Name" placeholder="Your name" required>
+					<input type="email" name="Email" placeholder="Your email" required>
+					<textarea name="Message" rows="6" placeholder="Your message"></textarea>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+				<span id="msg"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="copyright">
+	<p class="text">COPYRIGHT © 2023 DAKSHJAIN - ALL RIGHTS RESERVED.</p>
+</div>
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbypNn2bwJvL-B1Xyr1WbUMa_ECTT5Ar64cEIV37-AUlmWsdn-8W6lkvTl57ZxIkAGNkHA/exec'
+	const form = document.forms['submit-to-google-sheet']
+	const msg=document.getElementById("msg")
   
-    <!-- Stylesheets -->
-    <!-- Reset default styles and add support for google fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
-  </head>
-  
-  <body>
-
-    <header id="header">
-      <img src="logo.jpg">
-      <h1>Simple Website</h1>
-      
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-      <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>                 
-    </header>
-   
-    <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="home" class="content-region hide">
-            <h2>Home</h2>
-            <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/cpl-makerlab/simple-website-template">Fork this repository</a> to create your own site!
-            </p>
-          </div>
-          
-          <div id="about" class="content-region hide">
-            <h2>About</h2>
-            <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
-            </p>
-          </div>
-          
-          <div id="contact" class="content-region hide">
-            <h2>Contact</h2>
-            <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <footer>  
-      Footer region
-    </footer>
-    
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
-    
-  </body>
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => {
+			msg.innerHTML= "I'll get back to you as soon as possible."
+			setTimeout(function(){
+				msg.innerHTML=""
+		},3000)
+		form.reset()
+		})
+		.catch(error => console.error('Error!', error.message))
+	})
+  </script>
+</body>
 </html>
