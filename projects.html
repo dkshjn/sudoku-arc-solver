@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style_projects.css">
+	<script src="https://kit.fontawesome.com/689d7f38de.js" crossorigin="anonymous"></script>
+	<title>dakshjain</title>
+	<link rel="icon" href="./1.png" type="image/x-icon">
+</head>
+<body>
+<!-------------Header--------->
+<div id="sub-header">
+	<div class="container">
+		<nav>
+			<a href="index.html#header"><span class="logo">DJ</span></a>
+			<ul>
+				<li><a href="index.html#header">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="cv.pdf" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+<!-------------Sub-Header--------->
+<div id="sub-head">
+	<h1 class="text">Projects</h1>
+</div>
+<!-------------Boxes--------->
+<div class="row">
+    <div class="proj">
+        <h3>Wearable Child Abuse Detector Device</h3>
+        <img src="child_proj_image.png">
+        <p>Developed a low-fidelity prototype and application that promptly alerts parents/guardians and law enforcement by detecting child abuse using wearable technology consisting of upper-body innerwear, lower-body innerwear and a wristband.</p>
+        <a href="https://github.com/Endymion17/child_abuse_detection-app_code.git" target="_blank"><p>Github Repo</p></a>
+        <a href="final_slides.pptx" target="_blank"><p>Presentation Slides</p></a>
+    </div>
+    <div class="proj">
+        <h3>Industrial Robotic Arm</h3>
+        <img src="robot.png">
+        <p>Created a highly detailed model of an Industrial Robotic Arm including various parts, such as the base, joints, links, and end effectors, each with intricate details. Further understood the mechanical aspects of how motors provide power to move the joints, and how control systems control the various elements and perform a task accurately and efficiently.</p> 
+        <a href="Assembly2.iam" target="_blank"><p>Robotic arm 3D Model</p></a>
+        <a href="https://www.youtube.com/watch?v=ilMlf8lPsMc" target="_blank"><p>Video Explanantion</p></a>
+    </div>
+    <div class="proj">
+        <h3>Blind Stick</h3>
+        <img src="blind_stick.png">
+        <p>Designed and developed a low-cost blind stick with ultrasonic and pulse sensors that enhance navigation, safety and health monitoring for visually impaired individuals.</p> 
+        <a href="blind_stick.pdf" target="_blank"><p>Blind Stick Project File</p></a>
+    </div>
+</div>
+<!-------------Footer--------->
+<div id="copyright">
+	<p class="text">COPYRIGHT © 2023 DAKSHJAIN - ALL RIGHTS RESERVED.</p>
+</div>
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbypNn2bwJvL-B1Xyr1WbUMa_ECTT5Ar64cEIV37-AUlmWsdn-8W6lkvTl57ZxIkAGNkHA/exec'
+	const form = document.forms['submit-to-google-sheet']
+	const msg=document.getElementById("msg")
+  
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => {
+			msg.innerHTML= "I'll get back to you as soon as possible."
+			setTimeout(function(){
+				msg.innerHTML=""
+		},3000)
+		form.reset()
+		})
+		.catch(error => console.error('Error!', error.message))
+	})
+  </script>
+</body>
+</html>
