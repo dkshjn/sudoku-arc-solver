@@ -14,10 +14,14 @@
 <div id="sub-header">
 	<div class="container">
 		<nav>
-			<a href="index.html#header"><span class="logo">DJ</span></a>
+			<a href="#header"><span class="logo">DJ</span></a>
+			<div class="nav-links" id="navlinks">
 			<ul>
-				<li><a href="index.html#header">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="cv.pdf" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#contact">Contact</a></li>
+				<i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
+				<li><a href="index.html#header">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#contact">Contact</a></li>
 			</ul>
+		</div>
+			<i class="fa-solid fa-bars" onclick="showmenu()"></i>
 		</nav>
 	</div>
 </div>
@@ -31,7 +35,7 @@
         <h3>Wearable Child Abuse Detector Device</h3>
         <img src="child_proj_image.png">
         <p>Developed a low-fidelity prototype and application that promptly alerts parents/guardians and law enforcement by detecting child abuse using wearable technology consisting of upper-body innerwear, lower-body innerwear and a wristband.</p>
-        <a href="https://github.com/dkshjn/child_abuse_detection-app_code.git" target="_blank"><p>Github Repo</p></a>
+        <a href="https://github.com/Endymion17/child_abuse_detection-app_code.git" target="_blank"><p>Github Repo</p></a>
         <a href="https://drive.google.com/file/d/1yZM-PENW3xLv151rLGEo8LZHafg7CDqd/view?usp=sharing" target="_blank"><p>Presentation Slides</p></a>
     </div>
     <div class="proj">
@@ -52,6 +56,15 @@
 <div id="copyright">
 	<p class="text">COPYRIGHT © 2023 DAKSHJAIN - ALL RIGHTS RESERVED.</p>
 </div>
+<script>
+	var navLinks= document.getElementById("navlinks");
+	function showmenu(){
+		navlinks.style.right="0";
+	}
+	function hidemenu(){
+		navlinks.style.right="-200px";
+	}
+</script>
 <script>
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbypNn2bwJvL-B1Xyr1WbUMa_ECTT5Ar64cEIV37-AUlmWsdn-8W6lkvTl57ZxIkAGNkHA/exec'
 	const form = document.forms['submit-to-google-sheet']
