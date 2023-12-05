@@ -8,15 +8,28 @@
 	<script src="https://kit.fontawesome.com/689d7f38de.js" crossorigin="anonymous"></script>
 	<title>dakshjain</title>
 	<link rel="icon" href="./1.png" type="image/x-icon">
+	<style>
+		@media(max-width: 700px){
+			.col1 img{
+				width: 300px;
+				height: 500px;
+			}
+		}
+		
+	</style>
 </head>
 <body>
 <div id="header">
 	<div class="container">
 		<nav>
 			<a href="#header"><span class="logo">DJ</span></a>
+			<div class="nav-links" id="navlinks">
 			<ul>
+				<i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
 				<li><a href="#header">Home</a></li><li><a href="#about">About</a></li><li><a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="#contact">Contact</a></li>
 			</ul>
+		</div>
+			<i class="fa-solid fa-bars" onclick="showmenu()"></i>
 		</nav>
 		<div class="header-text">
 			<h1>Hello, I'm<br><span>Daksh </span>Jain.</h1>
@@ -32,7 +45,7 @@
 <div id="about">
 		<div class="row">
 			<div class="col1">
-				<img src="side.jpeg" style="width: 500px; height: 700px;">
+				<img class = "sideImage" src="side.jpeg">
 			</div>
 			<div class="col2">
 				<h1 class="sub-title">About me</h1>
@@ -49,13 +62,13 @@
 		<div class="row">
 			<div class="left">
 				<h1 class="subtitle">Contact me</h1>
-				<p><i class="fa-solid fa-envelope" style="vertical-align: middle;"></i>DAKSHJAIN17[AT]GMAIL[DOT]COM</p>
+				<p><i class="fa-solid fa-envelope"></i>  DAKSHJAIN17[AT]GMAIL[DOT]COM</p>
 				<div class="social">
 					<a href="https://www.linkedin.com/in/dkshjn/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>					
 					<a href="https://twitter.com/dj17_joy" target="_blank"><i class="fa-brands fa-twitter"></i></a>
 					<a href="https://www.instagram.com/dkshjn/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 				</div>
-				<a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" class="btn" target="_blank">Download Resume</a>
+				<a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" class="btn" target="_blank">Download CV</a>
 			</div>
 			<div class="right">
 				<form name="submit-to-google-sheet">
@@ -72,6 +85,16 @@
 <div id="copyright">
 	<p class="text">COPYRIGHT © 2023 DAKSHJAIN - ALL RIGHTS RESERVED.</p>
 </div>
+<script>
+	var navLinks= document.getElementById("navlinks");
+	function showmenu(){
+		navlinks.style.right="0";
+	}
+	function hidemenu(){
+		navlinks.style.right="-200px";
+	}
+</script>
+
 <script>
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbypNn2bwJvL-B1Xyr1WbUMa_ECTT5Ar64cEIV37-AUlmWsdn-8W6lkvTl57ZxIkAGNkHA/exec'
 	const form = document.forms['submit-to-google-sheet']
