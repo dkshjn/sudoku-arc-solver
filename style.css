@@ -10,10 +10,12 @@
 }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body{
     background: #26aea9;
     position: relative;
+    overflow-x: hidden;
 }
 #header{
     width: 100%;
@@ -276,6 +278,7 @@ form .btn{
 }
 nav .fa-solid{
     display: none;
+    overflow: hidden;
 }
 /*-----------changes for mobile devices----------*/
 
@@ -284,7 +287,7 @@ nav .fa-solid{
         margin-top: 40%;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 25px;
         margin-top: 50px;
     }
     #header{
@@ -293,6 +296,7 @@ nav .fa-solid{
         background-image: url(edit.jpg);
         background-size: cover;
         background-position: 500px 0px;
+        overflow: hidden;
     }
     nav ul li a{
         color: rgb(217, 232,200);
@@ -351,6 +355,11 @@ nav .fa-solid{
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 0px;
+    }
+    .col1{
+        flex-basis: 15%;
+        text-align: center;
+        padding-left: 0px;
     }
     .col1 img{
         width: 300px;
