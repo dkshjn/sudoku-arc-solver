@@ -10,14 +10,17 @@
 }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body{
     background: rgb(217, 232,200);
     position: relative;
+    overflow-x: hidden;
 }
 #header{
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
 }
 .logo{
     font-family: 'Pacifico';
