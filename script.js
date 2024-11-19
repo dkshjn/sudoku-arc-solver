@@ -80,7 +80,7 @@ function createBoard() {
         for (let col = 0; col < 9; col++) {
             const cell = document.createElement('div');
             cell.className = 'cell';
-
+ 
             // Add borders for 3x3 subgrid
             if (row % 3 === 2 && row !== 8) cell.classList.add('subgrid');
             if (col % 3 === 2 && col !== 8) cell.classList.add('subgrid');
@@ -253,9 +253,16 @@ function applyArcConsistencyToSolve() {
           }
       }
   }
+  const isSolved = board.every(row => row.every(cell => cell !== '' && domains[row.indexOf(cell)][board[row].indexOf(cell)].length === 1));
 
-  logStep("Finished", "Puzzle solved using arc consistency.");
-  console.log("Finished solving process.");
+  if (isSolved) {
+      logStep("Finished", "Puzzle solved using arc consistency.");
+      console.log("Finished solving process.");
+  } else {
+    logStep("Incomplete", "Puzzle requires more input to be completed.");
+    console.log("Puzzle requires more input to be completed.");
+}
+
   updateBoard();
 }
 
