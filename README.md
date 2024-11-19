@@ -54,7 +54,6 @@ This project showcases an interactive Sudoku solver powered by **arc consistency
 3. **Solve the Puzzle**:  
    Use the "Solve Using Arc Consistency" button to watch the solution unfold step by step.
 
-
 ## Key Functions
 
 - **Board Management**:  
