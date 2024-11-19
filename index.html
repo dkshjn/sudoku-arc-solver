@@ -1,117 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://kit.fontawesome.com/689d7f38de.js" crossorigin="anonymous"></script>
-	<title>dakshjain</title>
-	<link rel="icon" href="./1.png" type="image/x-icon">
-	<style>
-		@media(max-width: 700px){
-			.col1 img{
-				width: 300px;
-				height: 500px;
-			}
-		}
-		
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sudoku Solver</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="header">
-	<div class="container">
-		<nav>
-			<a href="#header"><span class="logo">DJ</span></a>
-			<div class="nav-links" id="navlinks">
-			<ul>
-				<i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
-				<li><a href="#header">Home</a></li><li><a href="#about">About</a></li><li><a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" target="_blank">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="#contact">Contact</a></li>
-			</ul>
-		</div>
-			<i class="fa-solid fa-bars" onclick="showmenu()"></i>
-		</nav>
-		<div class="header-text">
-			<h1>Hello, I'm<br><span>Daksh </span>Jain.</h1>
-		</div>
-	</div>
-</div>
-<div id="block">
-	<p class="text">Take your time, look around, and learn all there is to know about me.
-		 I'm actively looking for research projects and internships.
-		 If you're looking to work with me or want to grab some coffee, drop me a line and I'll get back to you soon.</p>
-</div>
-<!-------------about---------->
-<div id="about">
-		<div class="row">
-			<div class="col1">
-				<img class = "sideImage" src="side.jpeg">
-			</div>
-			<div class="col2">
-				<h1 class="sub-title">About me</h1>
-				<p class="heading">Who I am</p>
-				<p class="info">I am an undergraduate student at IIT Gandhinagar. I am actively pursuing internships to fuse theory with practice. I am passionate about delving into diverse domains. From crafting apps and websites to diving into the realm of machine learning, coding is my compass as I explore various landscapes of technology.</p>
-				<p class="heading">What I like</p>
-				<p class="info">I find joy in organising cultural festivals, testing my luck/skills in the stock market and crypto arena, and embracing my inner gamer with my friends. I love music, food and comedy.</p>
-		</div>
-	</div>
-</div>
-<!-------------Contact---------->
-<div id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="left">
-				<h1 class="subtitle">Contact me</h1>
-				<p><i class="fa-solid fa-envelope"></i>  DAKSHJAIN17[AT]GMAIL[DOT]COM</p>
-				<div class="social">
-					<a href="https://www.linkedin.com/in/dkshjn/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>					
-					<a href="https://twitter.com/dj17_joy" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-					<a href="https://www.instagram.com/dkshjn/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-				</div>
-				<a href="https://drive.google.com/file/d/1dHdGaEBfIUMMDNOKWCzw3YMNRvGRx8Su/view?usp=sharing" class="btn" target="_blank">Download CV</a>
-			</div>
-			<div class="right">
-				<form name="submit-to-google-sheet">
-					<input type="text" name="Name" placeholder="Your name" required>
-					<input type="email" name="Email" placeholder="Your email" required>
-					<textarea name="Message" rows="6" placeholder="Your message"></textarea>
-					<button type="submit" class="btn">Submit</button>
-				</form>
-				<span id="msg"></span>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="copyright">
-	<p class="text">COPYRIGHT © 2023 DAKSHJAIN - ALL RIGHTS RESERVED.</p>
-</div>
-<script>
-	var navLinks= document.getElementById("navlinks");
-	function showmenu(){
-		navlinks.style.right="0";
-	}
-	function hidemenu(){
-		navlinks.style.right="-200px";
-	}
-</script>
-
-<script>
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbypNn2bwJvL-B1Xyr1WbUMa_ECTT5Ar64cEIV37-AUlmWsdn-8W6lkvTl57ZxIkAGNkHA/exec'
-	const form = document.forms['submit-to-google-sheet']
-	const msg=document.getElementById("msg")
-  
-	form.addEventListener('submit', e => {
-	  e.preventDefault()
-	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-		.then(response => {
-			msg.innerHTML= "I'll get back to you as soon as possible."
-			setTimeout(function(){
-				msg.innerHTML=""
-		},3000)
-		form.reset()
-		})
-		.catch(error => console.error('Error!', error.message))
-	})
-  </script>
+    <div class="container">
+        <h1>Interactive Sudoku Solver with Arc Consistency</h1>
+        <div class="sudoku-container">
+            <div id="sudokuBoard" class="sudoku-board"></div>
+            <div class="domain-table">
+                <h3>Domain Table</h3>
+                <div id="domainTable">Select a cell to view possible values.</div>
+            </div>
+            <div id="logColumn" class="log-column">
+              <h3>Arc Consistency Steps</h3>
+              <div id="logSteps"></div>
+          </div>
+        </div>
+        <div class="controls">
+            <button onclick="generatePuzzle('custom')" class="btn">Custom Puzzle</button>
+            <select id="difficultySelect" class="btn" onchange="generatePuzzle(this.value)">
+                <option value="default">Select Difficulty</option>
+                <option value="very_easy">Very Easy</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="hell">Hell Mode</option>
+            </select>
+            <button class="btn" onclick="applyArcConsistencyToSolve()">Solve Using Arc Consistency</button>
+            <button id="clearCellButton" class="btn" onclick="clearSelectedCell()">Clear Cell</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
