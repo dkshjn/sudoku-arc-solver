@@ -214,6 +214,28 @@ function applyArcConsistency() {
     updateBoard();
 }
 
+function isBoardSolved() {
+    for (let row = 0; row < 9; row++) {
+        for (let col = 0; col < 9; col++) {
+            if (board[row][col] === '') {
+                return false; // Empty cell found
+            }
+
+            // Validate the current value against Sudoku rules
+            const value = board[row][col];
+            board[row][col] = ''; // Temporarily clear the cell
+            const validValues = getValidValues(row, col);
+            board[row][col] = value; // Restore the value
+
+            if (!validValues.includes(value)) {
+                return false; // Current value violates Sudoku rules
+            }
+        }
+    }
+    return true; // All cells are filled and valid
+}
+
+
 // Function to solve the puzzle by applying arc consistency
 function applyArcConsistencyToSolve() {
   console.log("Starting to solve using arc consistency...");
@@ -253,17 +275,22 @@ function applyArcConsistencyToSolve() {
           }
       }
   }
-  const isSolved = board.every(row => row.every(cell => cell !== '' && domains[row.indexOf(cell)][board[row].indexOf(cell)].length === 1));
 
-  if (isSolved) {
-      logStep("Finished", "Puzzle solved using arc consistency.");
-      console.log("Finished solving process.");
-  } else {
-    logStep("Incomplete", "Puzzle requires more input to be completed.");
-    console.log("Puzzle requires more input to be completed.");
-}
+//   updateBoard();
+//   logStep("Finished", "Puzzle solved using arc consistency.");
+//   console.log("Finished solving process.");
+//   updateBoard();
 
-  updateBoard();
+    if (isBoardSolved()) {
+        logStep("Finished", "Puzzle solved using arc consistency.");
+        console.log("Finished solving process.");
+    } else {
+        logStep("Incomplete", "Puzzle requires more input to be completed.");
+        console.log("Puzzle requires more input to be completed.");
+    }
+
+    // Ensure the board visually updates
+    updateBoard();
 }
 
 
