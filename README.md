@@ -23,7 +23,6 @@ This project showcases an interactive Sudoku solver powered by **arc consistency
 5. **Dynamic Feedback**:  
    - Tooltips and domain tables provide clarity on potential moves.  
 
-
 ## Project Overview
 
 - **HTML**: Lays out the Sudoku board, controls, and log panel.  
